@@ -6,6 +6,23 @@ char *ordinal(int v)
 	   - create this function
 	   - this code won't run with out it!
 	 */
+	if((v != 11) && (v != 12) && (v != 13)) v %= 10;
+
+	switch(v){
+		case 1:
+			return "st";
+			break;
+		case 2:
+			return "nd";
+			break;
+		case 3:
+			return "rd";
+			break;
+		default:
+			return "th";
+			break;
+	}
+		
 }
 
 int main()
