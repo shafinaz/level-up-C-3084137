@@ -4,26 +4,20 @@
 
 void center_text(int width, char *text)
 {
-	size_t size = strlen(text);
-	char *new_text = (char *)malloc(width + 1);
+	int size = strlen(text);
 
-	if (width < size)
-	{
-		printf("%s", text);
-	}
-	else
+	if (size < width)
 	{
 		int space = (width - size) / 2;
-		memset(new_text, ' ', width);
-		new_text[width] = '\0';
 
-		memmove(new_text + space, text, size);
-
-		printf("%s", new_text);
+		for(int x = 0; x < space; x++)
+		{
+			putchar(' ');
+		}
 	}
-	//free(new_text);
+	printf("%s", text);
 	printf("\n");
-	
+
 }
 
 int main()
